@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Pour ignorer les videos dans le git
+echo "*.MOV" >> .gitignore
+echo "*.MP4" >> .gitignore
+echo "*.mov" >> .gitignore
