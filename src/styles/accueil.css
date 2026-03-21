@@ -16,6 +16,7 @@
     gap: 2rem;
 }
 
+
 .conteneur-canvas{
     display: flex;
     flex-direction: column;
@@ -31,10 +32,9 @@
 }
 
 #dessin-sym {
-    position: relative;
     width: 99vw;
     height: 100vh;
-    background:#5A1414; 
+    background:#6f1d1d9c; 
     touch-action: none;
 }
 

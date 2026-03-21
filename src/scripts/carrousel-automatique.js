@@ -4,12 +4,14 @@ export function carrouselAutomatique() {
     const prevBtn = document.querySelector(".prev");
     const pointsContainer = document.querySelector(".points");
 
+    const carrousel = document.querySelector(".carrousel-automatique");
+
+    if (!carrousel) return;
+
     let index = 0;
     let interval;
 
     let startX = 0;
-
-    const carrousel = document.querySelector(".carrousel");
 
 
     carrousel.addEventListener("pointerdown", (e) => {

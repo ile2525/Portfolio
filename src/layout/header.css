@@ -4,7 +4,8 @@
     background: linear-gradient(to bottom, #200808, #5A1414);
     text-transform: uppercase;
     position: absolute;
-    z-index: 10000;
+    z-index: 1000000;
+    pointer-events: none;
 }
 
 .header-container {
@@ -12,7 +13,7 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    
+
     padding: 2rem;
 }
 

@@ -1,7 +1,7 @@
-// import { dessinSymetrique } from './untils/dessinSymetrique.js';
-import { filtreCategory } from './scripts/filtre.js'
-import { dessinSym } from './scripts/dessinSysmetrique.js'
-import { carrouselAutomatique } from './scripts/carrousel-automatique.js'
+
+import { filtreCategory } from './scripts/filtre.js';
+import { dessinSym } from './scripts/dessinSysmetrique.js';
+import { carrouselAutomatique } from './scripts/carrousel-automatique.js';
 
 carrouselAutomatique();
 dessinSym();

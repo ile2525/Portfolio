@@ -5,6 +5,7 @@
     background: linear-gradient(to bottom, #200808, #5A1414);
     position: absolute;
     z-index: 10000;
+    pointer-events: none;
 }
 
 .footer-wrapper p, a {

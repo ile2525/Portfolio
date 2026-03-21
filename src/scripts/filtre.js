@@ -1,4 +1,5 @@
 export function filtreCategory() {
+    if (!document.querySelector(".filtres")) return;
 
     // appel des boites et filtres
     const filtreButtons = document.querySelectorAll(".filtres button");
