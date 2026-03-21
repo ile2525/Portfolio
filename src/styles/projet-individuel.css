@@ -107,14 +107,6 @@
     padding: 2rem;
 }
 
-/* Carrousel automatique */
-.carrousel-automatique {
-    height: 80vh;
-    border-radius: 30px;
-    background-color: gray;
-
-}
-
 /* Logiciels utilisés pour le projet */
 .logiciels-utilises {
     display: flex;
