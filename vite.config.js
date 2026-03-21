@@ -7,6 +7,10 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 main: 'index.html',
+                projets: 'projets.html',
+                apropos: 'apropos.html',
+                immigration: 'immigration.html',
+                frigo: 'frigo.html',
                 //...autres pages
             },
         },
