@@ -6,10 +6,12 @@
     align-items: center;
     justify-content: center;
     gap: 2rem;
-font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
-
+.main-wrapper-project {
+    margin-top: 5rem;
+}
 /* Carrousel*/
 .carrousel {
     width: 80vw;
@@ -35,12 +37,16 @@ font-size: 1.5rem;
 .projet-info-base {
     display: flex;
     flex-direction: row;
+
+    justify-content: center;
     gap: 2rem;
     padding: 2rem 0;
 }
 
 .boite-info-base {
-    width: 100%;
+    padding: 1rem 1.5rem;
+    border: solid 1px;
+    border-radius: 30em;
     border-color: #F2CFC4;
 }
 
@@ -51,33 +57,54 @@ font-size: 1.5rem;
     gap: 2rem;
 }
 
-
 .contexte {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 1.5rem;
+    gap: 2rem;
+
     border: solid;
     border-radius: 30px;
     padding: 2rem;
 }
 
-.intentions {
+.contexte:hover, .role:hover, .apprentissages:hover{
+    transform: scale(1);
+
+    box-shadow: 
+        0 0 20px rgba(73, 16, 16, 0.8),
+        0 0 40px rgba(242, 207, 196, 0.6);
+}
+
+.role {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+
+    border: solid;
+    border-radius: 30px;
+    padding: 2rem;
+}
+
+.text-space {
     display: flex;
     flex-direction: column;
-    align-items: last baseline;
-    gap: 1.5rem;
-    border: solid;
-    border-radius: 30px;
+    gap: 2rem;
+}
+.icones {
+    width: 18rem;
     padding: 2rem;
 }
 
-.deroulement {
+.apprentissages {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 2rem;
+
+    border: solid;
+    border-radius: 30px;
+    padding: 2rem;
 }
 
 /* Carrousel automatique */
@@ -96,13 +123,6 @@ font-size: 1.5rem;
     gap: 2rem;
 }
 
-.log-placement {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-}
 .log1 {
-    width: 50px;
-    height: 50px;
-    background-color: grey;
+  padding: 0 2rem;
 }

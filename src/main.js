@@ -13,6 +13,6 @@ import './layout/footer.css';
 import './styles/accueil.css';
 import './styles/projet.css';
 import './styles/aPropos.css';
-import './styles/frigo.css';
+import './styles/projet-individuel.css';
 
 import './style.css';
