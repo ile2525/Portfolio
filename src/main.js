@@ -1,0 +1,16 @@
+// import { dessinSymetrique } from './untils/dessinSymetrique.js';
+import{filtreCategory} from './scripts/filtre.js'
+
+filtreCategory()
+
+import './assets/button.css';
+
+import './layout/header.css';
+import './layout/footer.css';
+
+import './styles/accueil.css';
+import './styles/projet.css';
+import './styles/aPropos.css';
+import './styles/frigo.css';
+
+import './style.css';

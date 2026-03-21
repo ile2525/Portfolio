@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page projets</title>
+</head>
+
+<body>
+    <!-- ----------------Barre de navigation---------------- -->
+    <header>
+        <div class="header-wrapper">
+
+            <div class="header-container">
+                <div class="header-soundBox"></div>
+                <h1>Mes projets</h1>
+                <div class="header-soundBox"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="header-separateur"></div>
+
+    <!-- ----------------Contenu de la page---------------- -->
+    <main class="main-wrapper-project">
+
+        <!-- Boutons permettant de filtrer les projet par catégories -->
+        <div class="filtres">
+            <div class="main-buttons-filtre">
+                <button data-category="all">
+                    <h2>Tous</h2>
+                </button>
+                <button data-category="art-interactif">
+                    <h2>Art interactif</h2>
+                </button>
+                <button data-category="design">
+                    <h2>Design</h2>
+                </button>
+                <button data-category="Son">
+                    <h2>Son</h2>
+                </button>
+            </div>
+        </div>
+
+        <!-- Boites de prévisualisation des projets -->
+        <div class="main-container-project">
+
+            <!-- Projet 1 : Titre -->
+            <div class="boite-projet" data-category="Son">
+                <a href="immigration.html"><img class="boite-img-projet" src="src/images/projets/immigration/boite-cover.png" alt="immigration">
+
+                <div class="base-info-projet">
+                    <h2>Les défis de l'immigration</h2>
+                    <h2>2024</h2>
+                </div>
+                </a>
+            </div>
+
+            <!-- Projet 2 : Titre -->
+            <div class="boite-projet" data-category="art-interactif">
+                <a href="frigo.html"><img class="boite-img-projet" src="src/images/projets/frigo/photo_frigo3.jpg"
+                        alt="frigo">
+                    <div class="base-info-projet">
+                        <h2>Titre</h2>
+                        <h2>Année</h2>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Projet 3 : Titre -->
+            <div class="boite-projet">
+                <div class="boite-img-projet"></div>
+                <div class="base-info-projet">
+                    <h2>Titre</h2>
+                    <h2>Année</h2>
+                </div>
+            </div>
+
+            <!-- Projet 4 : Titre -->
+            <div class="boite-projet">
+                <div class="boite-img-projet"></div>
+                <div class="base-info-projet">
+                    <h2>Titre</h2>
+                    <h2>Année</h2>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ----------------Bas de page---------------- -->
+    <div class="footer-separateur"></div>
+
+    <footer class="footer-wrapper">
+        <div class="footer-container">
+            <div class="information">
+                <h1>Iléona Vial</h1>
+                <p>Généraliste en médias interactifs</p>
+                <p>Montréal, QC, Canada</p>
+                <p>+1 (263)788-6251</p>
+                <p>ileona2525@gmail.com</p>
+            </div>
+
+            <div class="pages">
+                <a href="index.html">Accueil</a>
+                <a href="apropos.html">À propos</a>
+            </div>
+
+            <div class="logos">
+                <div class="logo-box"></div>
+                <div class="logo-box"></div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+
+</body>
+
+</html>

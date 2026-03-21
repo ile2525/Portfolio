@@ -1,0 +1,108 @@
+/* Conteneur */
+.main-container-project-individuel {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+font-size: 1.5rem;
+}
+
+
+/* Carrousel*/
+.carrousel {
+    width: 80vw;
+    height: 60vh;
+    border-radius: 30px;
+    background-color: gray;
+}
+
+/* Introduction du projet - Contenu de base */
+.projet-nom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.separateur-reduit {
+    width: 70%;
+    height: 0.2vh;
+    background-color: #F2CFC4;
+}
+
+.projet-info-base {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.boite-info-base {
+    width: 100%;
+    border-color: #F2CFC4;
+}
+
+/* Explication du projet - Contenu principal */
+.projet-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+.contexte {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+    border: solid;
+    border-radius: 30px;
+    padding: 2rem;
+}
+
+.intentions {
+    display: flex;
+    flex-direction: column;
+    align-items: last baseline;
+    gap: 1.5rem;
+    border: solid;
+    border-radius: 30px;
+    padding: 2rem;
+}
+
+.deroulement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+}
+
+/* Carrousel automatique */
+.carrousel-automatique {
+    height: 80vh;
+    border-radius: 30px;
+    background-color: gray;
+
+}
+
+/* Logiciels utilisés pour le projet */
+.logiciels-utilises {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.log-placement {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+.log1 {
+    width: 50px;
+    height: 50px;
+    background-color: grey;
+}

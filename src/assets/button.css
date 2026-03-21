@@ -1,0 +1,34 @@
+.main-buttons {
+    display: flex;
+    gap: 3rem;
+}
+
+.main-buttons button{
+    background-color: #F2CFC4;
+
+    width: 12rem;
+    height: 3rem;
+    border-radius: 30px;
+}
+
+.main-buttons h2{
+    color: #491010;
+}
+
+.main-buttons-filtre {
+    display: flex;
+    gap: 3rem;
+}
+
+.main-buttons-filtre button{
+    background-color: #200808;
+    border-color: #F2CFC4;
+
+    width: 12rem;
+    height: 3rem;
+    border-radius: 30px;
+}
+
+.main-buttons-filtre h2{
+    color: #F2CFC4;
+}
