@@ -1,6 +1,7 @@
 .main-buttons {
     display: flex;
     gap: 3rem;
+    position: absolute;
 }
 
 .main-buttons button{

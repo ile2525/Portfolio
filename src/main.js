@@ -1,7 +1,9 @@
 // import { dessinSymetrique } from './untils/dessinSymetrique.js';
 import{filtreCategory} from './scripts/filtre.js'
+import{dessinSym} from './scripts/dessinSysmetrique.js'
 
-filtreCategory()
+dessinSym();
+filtreCategory();
 
 import './assets/button.css';
 

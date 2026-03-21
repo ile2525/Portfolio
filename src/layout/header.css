@@ -3,6 +3,8 @@
     height: 10vh;
     background: linear-gradient(to bottom, #200808, #5A1414);
     text-transform: uppercase;
+    position: absolute;
+    z-index: 10000;
 }
 
 .header-container {
