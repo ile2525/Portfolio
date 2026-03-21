@@ -28,5 +28,6 @@
     width: 99vw;
     height: 100vh;
     background:#5A1414; 
+    touch-action: none;
 }
 

@@ -1,46 +1,44 @@
 export function dessinSym() {
-    
+
     const canvas = document.getElementById("dessin-sym");
     const ctx = canvas.getContext("2d");
 
+    let centreX, centreY;
+    let enTrainDeDessiner = false;
+    let dernierPoint = null;
 
+    const symetrie = window.innerWidth < 768 ? 6 : 10;
+    let teinte = 180;
+
+    //Adaptation résolution
     function ajusterResolution() {
-    let cx, cy;
-    let ratio = window.devicePixelRatio || 1;
 
-    let largeurCSS = canvas.clientWidth;
-    let hauteurCSS = canvas.clientHeight;
+        const ratio = window.devicePixelRatio || 1;
 
-    canvas.width = largeurCSS * ratio;
-    canvas.height = hauteurCSS * ratio;
+        const largeurCSS = canvas.clientWidth;
+        const hauteurCSS = canvas.clientHeight;
 
-    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+        canvas.width = largeurCSS * ratio;
+        canvas.height = hauteurCSS * ratio;
 
-    cx = largeurCSS / 2;
-    cy = hauteurCSS / 2;
-}
+        ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+        // centre en coordonnées CSS
+        centreX = largeurCSS / 2;
+        centreY = hauteurCSS / 2;
+    }
 
     ajusterResolution();
     window.addEventListener("resize", ajusterResolution);
 
-    const w = canvas.width;
-    const h = canvas.height;
-    const cx = canvas.clientWidth / 2;;
-    const cy = canvas.clientHeight / 2;
-
-    const symmetry = 10;
-    let drawing = false;
-    let last = null;
-
-    // pour le "glow"
+    // style du trait
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
-    ctx.lineWidth = 5;
-
-    // composition additive de couleurs
     ctx.globalCompositeOperation = "lighter";
+    ctx.lineWidth = 1 + Math.random() * 3;
 
-    function getMousePos(e) {
+    //obtenir position du pointeur
+    function obtenirPosition(e) {
         const rect = canvas.getBoundingClientRect();
         return {
             x: e.clientX - rect.left,
@@ -48,64 +46,68 @@ export function dessinSym() {
         };
     }
 
-    // voile noir pour faire une traînée
-    function fadeCanvas() {
+    function effetTrainée() {
         ctx.save();
         ctx.globalCompositeOperation = "source-over";
-        ctx.fillStyle = "rgba(0, 0, 0, 0.008)"; // plus proche de 1 = traînée courte
+        ctx.fillStyle = "rgba(0, 0, 0, 0.01)";
         ctx.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
         ctx.restore();
     }
 
-    // changement couleur par le temps
-    let hue = 180;
-    function updateHue() {
-        hue = (hue + 0.5) % 360;
-        ctx.strokeStyle = `hsla(${hue}, 100%, 60%, 0.7)`;
+    function mettreAJourCouleur() {
+        teinte = (teinte + 0.5) % 360;
+        ctx.strokeStyle = `hsla(${teinte}, 100%, 60%, 1)`;
     }
 
-    canvas.addEventListener("mousedown", (e) => {
-        drawing = true;
-        last = getMousePos(e);
+    // Les évènements
+    canvas.addEventListener("pointerdown", (e) => {
+        enTrainDeDessiner = true;
+        dernierPoint = obtenirPosition(e);
+
+        canvas.setPointerCapture(e.pointerId);
     });
 
-    canvas.addEventListener("mouseup", () => {
-        drawing = false;
-        last = null;
+    canvas.addEventListener("pointerup", (e) => {
+        enTrainDeDessiner = false;
+        dernierPoint = null;
+
+        canvas.releasePointerCapture(e.pointerId);
     });
 
-    canvas.addEventListener("mouseleave", () => {
-        drawing = false;
-        last = null;
+    canvas.addEventListener("pointerleave", () => {
+        enTrainDeDessiner = false;
+        dernierPoint = null;
     });
 
-    canvas.addEventListener("mousemove", (e) => {
-        if (!drawing) return;
+    canvas.addEventListener("pointermove", (e) => {
+        if (!enTrainDeDessiner) return;
 
-        const pos = getMousePos(e);
+        const position = obtenirPosition(e);
 
-        const lx = last.x - cx;
-        const ly = last.y - cy;
-        const x = pos.x - cx;
-        const y = pos.y - cy;
+        const lx = dernierPoint.x - centreX;
+        const ly = dernierPoint.y - centreY;
+        const x = position.x - centreX;
+        const y = position.y - centreY;
 
-        fadeCanvas();      // traînée
-        updateHue();       // couleur
+        effetTrainée();
+        mettreAJourCouleur();
 
         ctx.save();
-        ctx.translate(cx, cy);
+        ctx.translate(centreX, centreY);
 
-        const angleStep = (2 * Math.PI) / symmetry;
+        const angle = (2 * Math.PI) / symetrie;
 
-        for (let i = 0; i < symmetry; i++) {
-            ctx.rotate(angleStep);
+        for (let i = 0; i < symetrie; i++) {
 
+            ctx.rotate(angle);
+
+            // trait principal
             ctx.beginPath();
             ctx.moveTo(lx, ly);
             ctx.lineTo(x, y);
             ctx.stroke();
 
-            // miroir vertical
+            // miroir
             ctx.save();
             ctx.scale(1, -1);
             ctx.beginPath();
@@ -117,21 +119,21 @@ export function dessinSym() {
 
         ctx.restore();
 
-        last = pos;
+        dernierPoint = position;
     });
 
-    // boucle d'anim pour continuer le fade même sans bouger la souris
-    function loop() {
-        fadeCanvas();
-        requestAnimationFrame(loop);
+    // boucle animation (trainée continue)
+    function boucle() {
+        effetTrainée();
+        requestAnimationFrame(boucle);
     }
-    loop();
+    boucle();
 
-    // touche C = clear
+    // touche C pour clear
     window.addEventListener("keydown", (e) => {
         if (e.key.toLowerCase() === "c") {
             ctx.globalCompositeOperation = "source-over";
-            ctx.clearRect(0, 0, w, h);
+            ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
             ctx.globalCompositeOperation = "lighter";
         }
     });
