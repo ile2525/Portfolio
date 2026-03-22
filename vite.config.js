@@ -11,7 +11,8 @@ export default defineConfig({
                 apropos: 'apropos.html',
                 immigration: 'immigration.html',
                 affiche: 'affiche.html',
-                
+                emotions: 'emotions.html',
+                frigo: 'frigo.html',
                 //...autres pages
             },
         },

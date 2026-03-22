@@ -27,6 +27,14 @@
   text-align: center;
 }
 
+.boite-projet:hover{
+    transform: scale(1.05);
+
+    box-shadow: 
+        0 0 10px rgba(73, 16, 16, 0.8),
+        0 0 20px rgba(242, 207, 196, 0.6);
+}
+
 .boite-projet h2 {
   color: #200808;
 }

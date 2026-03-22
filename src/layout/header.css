@@ -14,12 +14,11 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-
-    padding: 2rem;
+    flex: none;
+    padding: 1.5rem;
 }
 
-.header-soundBox {
-    width: 30px;
-    height: 30px;
-    background-color: grey;
+.header-icone {
+    width: 3rem;
+    height: 3rem;
 }
