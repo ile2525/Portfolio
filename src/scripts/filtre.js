@@ -12,13 +12,14 @@ export function filtreCategory() {
             button.classList.add('active');
 
             //Récupère catégories et boites associées
-            const selectionCategory = button.getAttribute('data-category');
+            const selectionCategory = button.getAttribute('data-category').trim().toLowerCase();
 
             //Gère état visible/invisible
             boites.forEach(boite => {
-                const boiteCategory = boite.getAttribute('data-category');
+                const boiteCategory = boite.getAttribute('data-category') || '';
+                const categories = boiteCategory.split(',').map(c => c.trim().toLowerCase()).filter(Boolean);
 
-                if (selectionCategory === 'all' || boiteCategory === selectionCategory) {
+                if (selectionCategory === 'all' || categories.includes(selectionCategory)) {
                     boite.classList.remove('hidden'); //visible
                 } else {
                     boite.classList.add('hidden');    //invisible

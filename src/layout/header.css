@@ -5,7 +5,7 @@
     text-transform: uppercase;
     position: absolute;
     z-index: 1000000;
-    pointer-events: none;
+    /* pointer-events: none; */
     border-bottom: 0.2vh solid #F2CFC4;
 }
 

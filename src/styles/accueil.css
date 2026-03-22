@@ -25,10 +25,12 @@
     align-items: center;
 }
 
-.main-img {
-    width: 280px;
-    height: 330px;
-    background-color: grey;
+.main-wrapper .main-img {
+    width: 70%;
+    height: 70%;
+    height: auto;
+    border: none;
+    touch-action: none;
 }
 
 #dessin-sym {
@@ -37,4 +39,3 @@
     background:#6f1d1d9c; 
     touch-action: none;
 }
-
