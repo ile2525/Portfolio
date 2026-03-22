@@ -1,6 +1,11 @@
 export function dessinSym() {
 
     const canvas = document.getElementById("dessin-sym");
+    if (!canvas) {
+        // Pas de canvas sur cette page (ex : projets.html, apropos.html), on ne fait rien
+        return;
+    }
+
     const ctx = canvas.getContext("2d");
 
     let centreX, centreY;
