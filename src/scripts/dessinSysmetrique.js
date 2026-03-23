@@ -64,6 +64,80 @@ export function dessinSym() {
         ctx.strokeStyle = `hsla(${teinte}, 100%, 60%, 1)`;
     }
 
+    // Fonction pour dessiner une ligne symétrique
+    function dessinerLigneSymetrique(x1, y1, x2, y2) {
+        effetTrainée();
+        mettreAJourCouleur();
+
+        ctx.save();
+        ctx.translate(centreX, centreY);
+
+        const angle = (2 * Math.PI) / symetrie;
+
+        for (let i = 0; i < symetrie; i++) {
+            ctx.rotate(angle);
+
+            // trait principal
+            ctx.beginPath();
+            ctx.moveTo(x1 - centreX, y1 - centreY);
+            ctx.lineTo(x2 - centreX, y2 - centreY);
+            ctx.stroke();
+
+            // miroir
+            ctx.save();
+            ctx.scale(1, -1);
+            ctx.beginPath();
+            ctx.moveTo(x1 - centreX, y1 - centreY);
+            ctx.lineTo(x2 - centreX, y2 - centreY);
+            ctx.stroke();
+            ctx.restore();
+        }
+
+        ctx.restore();
+    }
+
+    // Animation d'intro 
+    function jouerAnimationIntro() {
+        let angle = 0;
+        let radius = 150;
+        const maxRadius = Math.min(centreX, centreY) * 0.8;
+        const step = 0.05; //vitesse de  rotation
+        let lastX = centreX;
+        let lastY = centreY;
+
+        function animer() {
+            if (radius >= maxRadius) {
+
+                // Efface après une seconde
+                setTimeout(() => {
+                    ctx.globalCompositeOperation = "source-over";
+                    ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+                    ctx.globalCompositeOperation = "lighter";
+                }, 1000); 
+                return;
+            }
+
+            // Angle au rayon aléatoire
+            angle += step + (Math.random() - 0.5) * 0.1; // Fluidité
+            radius += step * 5 + Math.random() * 10; // Espacement
+
+            const x = centreX + Math.cos(angle) * radius;
+            const y = centreY + Math.sin(angle) * radius;
+
+            dessinerLigneSymetrique(lastX, lastY, x, y);
+
+            lastX = x;
+            lastY = y;
+
+            setTimeout(animer, 50); 
+        }
+
+        animer();
+    }
+
+    // Lancer l'animation d'intro
+    jouerAnimationIntro();
+
     // Les évènements
     canvas.addEventListener("pointerdown", (e) => {
         enTrainDeDessiner = true;
@@ -89,40 +163,7 @@ export function dessinSym() {
 
         const position = obtenirPosition(e);
 
-        const lx = dernierPoint.x - centreX;
-        const ly = dernierPoint.y - centreY;
-        const x = position.x - centreX;
-        const y = position.y - centreY;
-
-        effetTrainée();
-        mettreAJourCouleur();
-
-        ctx.save();
-        ctx.translate(centreX, centreY);
-
-        const angle = (2 * Math.PI) / symetrie;
-
-        for (let i = 0; i < symetrie; i++) {
-
-            ctx.rotate(angle);
-
-            // trait principal
-            ctx.beginPath();
-            ctx.moveTo(lx, ly);
-            ctx.lineTo(x, y);
-            ctx.stroke();
-
-            // miroir
-            ctx.save();
-            ctx.scale(1, -1);
-            ctx.beginPath();
-            ctx.moveTo(lx, ly);
-            ctx.lineTo(x, y);
-            ctx.stroke();
-            ctx.restore();
-        }
-
-        ctx.restore();
+        dessinerLigneSymetrique(dernierPoint.x, dernierPoint.y, position.x, position.y);
 
         dernierPoint = position;
     });
