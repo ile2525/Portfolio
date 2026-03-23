@@ -1,0 +1,25 @@
+.button-cv {
+    background-color: #F2CFC4;
+    color: #491010;
+    font-weight: bold;
+    font-size: 1.1rem;
+    
+
+    width: 12rem;
+    height: 3rem;
+    border-radius: 30px;
+    border: 1px solid #F2CFC4;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition: all 0.3s ease;
+}
+
+.button-cv:hover {
+    transform: scale(1.05);
+
+    box-shadow: 
+        0 0 10px rgba(73, 16, 16, 0.8),
+        0 0 20px rgba(242, 207, 196, 0.6);
+}

@@ -29,33 +29,3 @@
         0 0 60px rgba(242, 207, 196, 0.6);
 }
 
-.main-buttons h2, a {
-    color: #491010;
-    text-decoration: none;
-}
-
-.main-buttons-filtre {
-    display: flex;
-    gap: 3rem;
-}
-
-.main-buttons-filtre button {
-    background-color: #200808;
-    border-color: #F2CFC4;
-
-    width: 12rem;
-    height: 3rem;
-    border-radius: 30px;
-}
-
-.main-buttons-filtre h2 {
-    color: #F2CFC4;
-}
-
-.main-buttons-filtre button:hover {
-    transform: scale(1.05);
-
-    box-shadow: 
-        0 0 10px rgba(73, 16, 16, 0.8),
-        0 0 20px rgba(242, 207, 196, 0.6);
-}
