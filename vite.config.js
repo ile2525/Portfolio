@@ -9,6 +9,8 @@ export default defineConfig({
                 main: 'index.html',
                 projets: 'projets.html',
                 apropos: 'apropos.html',
+                contact: 'contact.html',
+                FeT: 'FeT.html',
                 immigration: 'immigration.html',
                 affiche: 'affiche.html',
                 emotions: 'emotions.html',

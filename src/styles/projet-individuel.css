@@ -39,6 +39,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: 1rem;
 }
 
@@ -135,6 +136,14 @@
 
 .img-archipel {
     width: 25%;
+    border-radius: 30px;
+    border: solid 1px;
+    border-color: #F2CFC4;
+    margin-top:6rem;
+}
+
+.img-FeT {
+    width: 50%;
     border-radius: 30px;
     border: solid 1px;
     border-color: #F2CFC4;
