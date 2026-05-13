@@ -4,6 +4,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       border-bottom: 0.5px solid var(--bordure);
+      background: var(--fond-surface);
     }
 
     /* Colonne gauche — accroche */

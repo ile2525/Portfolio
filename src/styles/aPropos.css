@@ -1,6 +1,7 @@
  /* ─── SECTION IDENTITÉ — photo + nom + titre ──────────────────── */
     .section-identite {
       display: grid;
+      background: var(--fond-surface);
       grid-template-columns: 340px 1fr;
       gap: 80px;
       align-items: start;
@@ -28,6 +29,7 @@
       transition: transform .8s var(--courbe-sortie);
     }
     .identite-photo-cadre:hover img { transform: scale(1.03); }
+
     /* Dégradé bas sur la photo */
     .identite-photo-cadre::after {
       content: '';
@@ -117,6 +119,7 @@
       opacity: 0;
       transform: translateY(24px);
       transition: opacity .8s var(--courbe-sortie), transform .8s var(--courbe-sortie);
+      background: var(--fond-surface);
     }
     .section-formations.visible { opacity: 1; transform: translateY(0); }
 
@@ -207,6 +210,7 @@
       opacity: 0;
       transform: translateY(24px);
       transition: opacity .8s var(--courbe-sortie), transform .8s var(--courbe-sortie);
+      background: var(--fond-surface);
     }
     .section-fonctionnement.visible { opacity: 1; transform: translateY(0); }
 
