@@ -162,6 +162,7 @@
       opacity: 0;
       animation: glisserVers .9s var(--courbe-sortie) .65s forwards;
       transition: border-color .3s;
+      background: var(--fond-principal);
     }
     .bloc-cv:hover { border-color: var(--accent); }
     /* Dégradé décoratif coin */
