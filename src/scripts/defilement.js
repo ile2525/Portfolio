@@ -38,4 +38,6 @@ export function defilement() {
  
     document.querySelectorAll('[data-section]')
       .forEach(el => observateurApparitionProjet.observe(el));
+
+      
 }

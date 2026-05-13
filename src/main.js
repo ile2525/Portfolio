@@ -12,6 +12,7 @@ carrousel();
 import './assets/button.css';
 import './assets/button-filtre.css';
 import './assets/cartes.css';
+import './assets/logiciels.css';
 import './assets/carrousel.css';
 import './assets/defilement.css';
 import './assets/variables.css';
@@ -23,8 +24,8 @@ import './layout/responsive.css';
 
 import './styles/accueil.css';
 import './styles/projet.css';
-// import './styles/aPropos.css';
-// import './styles/contact.css';
+import './styles/aPropos.css';
+import './styles/contact.css';
 import './styles/projet-individuel.css';
 
 

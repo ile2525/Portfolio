@@ -7,129 +7,214 @@
     <title>Page à propos</title>
 </head>
 
-<body>
-    <!-- ----------------Barre de navigation---------------- -->
-    <header>
-        <div class="header-wrapper">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400&display=swap"
+  rel="stylesheet" />
 
-            <div class="header-container">
-                <a href="index.html"><img class="header-icone" src="src/images/icones/accueil.png" alt="accueil"></a>
-                <h1>À propos</h1>
-                <a href="contact.html"><img class="header-icone" src="src/images/icones/contact.png" alt="contact"></a>
-            </div>
+<body>
+    <div id="curseur-point"></div>
+    <div id="curseur-anneau"></div>
+    <div class="ligne-atmo ligne-atmo-gauche"></div>
+    <div class="ligne-atmo ligne-atmo-droite"></div>
+
+    <!-- ─── NAVIGATION ─────────────────────────────────────────────── -->
+    <nav id="barre-navigation">
+        <a href="index.html" class="nav-logo">
+            <span class="nav-logo-nom">Iléona Vial</span>
+            <span class="nav-logo-titre">Technologue créative · Médias interactifs</span>
+        </a>
+        <div class="nav-liens">
+            <a href="projets.html">Projets</a>
+            <a href="apropos.html" class="actif">À propos</a>
+            <a href="contact.html">Contact</a>
+            <a href="contact.html" class="nav-bouton-contact">Collaborons</a>
+        </div>
+    </nav>
+
+    <!-- ─── EN-TÊTE ────────────────────────────────────────────────── -->
+    <header class="entete-page">
+        <div>
+            <p class="entete-surtitre">Portfolio</p>
+            <h1 class="entete-titre">À <em>propos.</em></h1>
         </div>
     </header>
 
-    <div class="header-separateur"></div>
+    <!-- ─── IDENTITÉ ───────────────────────────────────────────────── -->
+    <section class="section-identite">
 
-    <!-- ----------------Contenu de la page---------------- -->
-    <main class="main-wrapper-apropos">
-
-        <!-- Partie gauche : Image et informations -->
-        <div class="main-container-apropos">
-            <div class="description-gauche">
-                <img class="main-img" src="src/images/apropos/Image.jpg" alt="Photo-personnelle">
-                <h1>Iléona Vial</h1>
-                <div class="separateur-reduit"></div>
-                <h4>Technologue créative en médias interactifs</h4>
-
-            </div>
-
-            <!-- Partie droite : Logiciels et formations -->
-            <div class="description-droite">
-
-                <!-- Logiciels -->
-                <div class="logiciels">
-                    <div class="logiciels-generaux">
-                        <img src="src/images/logo_logiciel/TouchDesigner.png" alt="TouchDesigner">
-                        <img src="src/images/logo_logiciel/Figma.png" alt="Figma">
-                        <img src="src/images/logo_logiciel/Rive.png" alt="Rive">
-                        <img src="src/images/logo_logiciel/FLstudio.png" alt="FLstudio"><br>
-                        <img src="src/images/logo_logiciel/Unreal.png" alt="Unreal">
-                        <img src="src/images/logo_logiciel/Github.png" alt="Github">
-                        <img src="src/images/logo_logiciel/MadMapper.png" alt="MadMapper">
-                    </div>
-
-                    <div class="logiciels-adobe">
-                        <img src="src/images/logo_logiciel/PremierePro.png" alt="PremierePro">
-                        <img src="src/images/logo_logiciel/Photoshop.png" alt="Photoshop">
-                        <img src="src/images/logo_logiciel/Illustrator.png" alt="Illustrator">
-                    </div>
-
-                    <div class="logiciels-web">
-                        <img src="src/images/logo_logiciel/LangageWeb.png" alt="Langages">
-                        <!-- <img src="src/images/logo_logiciel/Figma.png" alt="DBbowser"> -->
-                    </div>
-                </div>
-
-                <!-- Formations -->
-                <div class="formations">
-                    <div class="formation-france">
-                        <h4>2018-2021</h4>
-                        <p>Baccalauréat en Sciences et Technologies de Management</p>
-                        <p>Cavaillon, France</p>
-                    </div>
-
-                    <div class="formation-montreal">
-                        <h4>2023-2027 (En cours)</h4>
-                        <p>DEC en Technique d'intégration multimédia</p>
-                        <p>Collège de Bois-De-Boulogne, Montréal</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="description-globale">
-                <div class="partie1">
-                    <h1>Qui suis-je ?</h1>
-                    <p>Je suis une étudiante en intégration multimédia, attirée par les projets qui cherchent
-                        à raconter quelque chose, à faire ressentir, ou à créer du lien.</p>
-                    <p>J’apprecie explorer différents formats, du web à l’installation interactive avec une envie
-                        constante de comprendre, d’expérimenter et de donner du sens à ce que je crée. Ce qui
-                        m’intéresse est l’expérience dans sa globalité, ce que l’on perçoit, ce que l’on comprend, et ce
-                        que l’on ressent.</p>
-                </div>
-                <div class="partie2">
-                    <h1>Mon fonctionnement</h1>
-                    <p>Dans mes projets, je jongle régulièrement avec des rôles à la fois créatifs et techniques. Cette
-                        compréhension des deux aspects me permet d’avoir une vision d’ensemble tout en restant attentive
-                        aux détails qui font la différence. J’aborde chaque projet comme un équilibre entre intention et
-                        expérimentation. J’aime tester, ajuster, parfois simplifier pour arriver à une expérience qui
-                        reste à la fois cohérente et accessible ou parfois complexifier pour plus de profondeur dans un
-                        message.</p>
-                    <p>J’accorde une importance particulière à la relation entre le visuel, le son et l’interaction,
-                        afin de créer des expériences complètes et engageantes.</p>
+        <!-- Photo -->
+        <div class="identite-photo-col">
+            <div class="identite-photo-cadre">
+                <img src="src/images/apropos/Image.jpg" alt="Portrait d'Iléona Vial" />
+                <div class="identite-nom-flottant">
+                    <p class="identite-nom">Iléona Vial</p>
+                    <p class="identite-role">Technologue créative en médias interactifs</p>
                 </div>
             </div>
         </div>
 
-    </main>
+        <!-- Bio -->
+        <div class="identite-bio-col">
 
-    <!-- ----------------Bas de page---------------- -->
-    <div class="footer-separateur"></div>
-
-    <footer class="footer-wrapper">
-        <div class="footer-container">
-            <div class="information">
-                <h1>Iléona Vial</h1>
-                <p>Technologue créative en médias interactifs</p>
-                <p>Montréal, QC, Canada</p>
-                <p>+1 (263)788-6251</p>
-                <p>ileona2525@gmail.com</p>
+            <div class="bio-bloc">
+                <p class="bio-surtitre">Qui suis-je ?</p>
+                <h2 class="bio-titre">Créer pour <em>faire ressentir.</em></h2>
+                <div class="bio-texte">
+                    <p>Je suis une étudiante en intégration multimédia, attirée par les projets
+                        qui cherchent à raconter quelque chose, à faire ressentir, ou à créer du lien.</p>
+                    <p>J'apprécie explorer différents formats, du web à l'installation interactive,
+                        avec une envie constante de comprendre, d'expérimenter et de donner du sens
+                        à ce que je crée. Ce qui m'intéresse, c'est l'expérience dans sa globalité —
+                        ce que l'on perçoit, ce que l'on comprend, et ce que l'on ressent.</p>
+                </div>
             </div>
 
-            <div class="pages">
-                <a href="projets.html">Mes projets</a>
-                <a href="index.html">Accueil</a>
+            <div class="identite-liens-rapides">
+                <a href="projets.html" class="lien-rapide">Voir mes projets</a>
+                <a href="src/images/apropos/I_Vial_CV_Prelim.pdf" target="_blank" class="lien-rapide">Télécharger mon
+                    CV</a>
+                <a href="contact.html" class="lien-rapide">Me contacter</a>
             </div>
 
-            <div class="logos">
-                <a href="mailto:ileona2525@gmail.com" target="_blank"><img class="logo-box"
-                        src="src/images/icones/gmail.png" alt="gmail"></a>
-                <a href="https://www.linkedin.com/in/ileona-vial-24ba8631b" target="_blank"><img class="logo-box"
-                        src="src/images/icones/linkedin.png" alt="linkedin"></a>
+        </div>
+    </section>
+
+    <!-- ─── FORMATIONS ─────────────────────────────────────────────── -->
+    <section class="section-formations" data-section>
+        <p class="formations-entete">Parcours</p>
+        <h2 class="formations-titre">Formations</h2>
+
+        <div class="formations-timeline">
+
+            <div class="formation-item">
+                <span class="formation-periode">2023 — 2027</span>
+                <div class="formation-corps">
+                    <p class="formation-diplome">DEC en Technique d'intégration multimédia</p>
+                    <p class="formation-etablissement">Collège de Bois-De-Boulogne · Montréal · En cours</p>
+                </div>
             </div>
+
+            <div class="formation-item">
+                <span class="formation-periode">2018 — 2021</span>
+                <div class="formation-corps">
+                    <p class="formation-diplome">Baccalauréat en Sciences et Technologies du Management</p>
+                    <p class="formation-etablissement">Cavaillon · France</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ─── LOGICIELS ──────────────────────────────────────────────── -->
+    <section class="section-logiciels" data-section>
+        <p class="logiciels-entete">Outils</p>
+        <h2 class="logiciels-titre">Logiciels maîtrisés</h2>
+
+        <div class="logiciels-groupes">
+
+            <div class="logiciels-groupe">
+                <p class="groupe-label">Création interactive & installation</p>
+                <div class="logiciels-rangee">
+                    <div class="logiciel-item"><img src="src/images/logo_logiciel/TouchDesigner.png" alt="TouchDesigner"
+                            title="TouchDesigner" /></div>
+                    <div class="logiciel-item"><img src="src/images/logo_logiciel/Figma.png" alt="Figma"
+                            title="Figma" /></div>
+                    <div class="logiciel-item"><img src="src/images/logo_logiciel/Rive.png" alt="Rive" title="Rive" />
+                    </div>
+                    <div class="logiciel-item"><img src="src/images/logo_logiciel/MadMapper.png" alt="MadMapper"
+                            title="MadMapper" /></div>
+                    <div class="logiciel-item"><img src="src/images/logo_logiciel/Unreal.png" alt="Unreal Engine"
+                            title="Unreal Engine" /></div>
+                </div>
+            </div>
+
+            <div class="logiciels-groupe">
+                <p class="groupe-label">Son & musique</p>
+                <div class="logiciels-rangee">
+                    <div class="logiciel-item"><img src="src/images/logo_logiciel/FLstudio.png" alt="FL Studio"
+                            title="FL Studio" /></div>
+                </div>
+            </div>
+
+            <div class="logiciels-groupe">
+                <p class="groupe-label">Suite Adobe</p>
+                <div class="logiciels-rangee">
+                    <div class="logiciel-item"><img src="src/images/logo_logiciel/PremierePro.png" alt="Premiere Pro"
+                            title="Premiere Pro" /></div>
+                    <div class="logiciel-item"><img src="src/images/logo_logiciel/Photoshop.png" alt="Photoshop"
+                            title="Photoshop" /></div>
+                    <div class="logiciel-item"><img src="src/images/logo_logiciel/Illustrator.png" alt="Illustrator"
+                            title="Illustrator" /></div>
+                </div>
+            </div>
+
+            <div class="logiciels-groupe">
+                <p class="groupe-label">Web & versionnement</p>
+                <div class="logiciels-rangee">
+                    <div class="logiciel-item"><img src="src/images/logo_logiciel/LangageWeb.png" alt="HTML · CSS · JS"
+                            title="HTML · CSS · JS" /></div>
+                    <div class="logiciel-item"><img src="src/images/logo_logiciel/Github.png" alt="GitHub"
+                            title="GitHub" /></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ─── MON FONCTIONNEMENT ─────────────────────────────────────── -->
+    <section class="section-fonctionnement" data-section>
+        <div class="fonctionnement-grille">
+
+            <div class="fonctionnement-bloc">
+                <p class="fonctionnement-surtitre">Approche</p>
+                <h2 class="fonctionnement-sous-titre">Créativité<br><em>& technique</em></h2>
+                <div class="fonctionnement-texte">
+                    <p>Dans mes projets, je jongle régulièrement avec des rôles à la fois créatifs
+                        et techniques. Cette compréhension des deux aspects me permet d'avoir une
+                        vision d'ensemble tout en restant attentive aux détails qui font la différence.</p>
+                    <p>J'aborde chaque projet comme un équilibre entre intention et expérimentation —
+                        tester, ajuster, parfois simplifier pour arriver à une expérience cohérente
+                        et accessible, ou complexifier pour plus de profondeur dans le message.</p>
+                </div>
+            </div>
+
+            <div class="fonctionnement-bloc">
+                <p class="fonctionnement-surtitre">Sensibilité</p>
+                <h2 class="fonctionnement-sous-titre">Visuel, son<br><em>& interaction</em></h2>
+                <div class="fonctionnement-texte">
+                    <p>J'accorde une importance particulière à la relation entre le visuel, le son
+                        et l'interaction, afin de créer des expériences complètes et engageantes.</p>
+                    <p>Ce qui m'intéresse, c'est l'espace entre la technique et l'émotion — là
+                        où un projet cesse d'être un objet et devient une expérience que l'on
+                        traverse.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ─── APPEL À L'ACTION ───────────────────────────────────────── -->
+    <section class="section-cta" data-section>
+        <p class="cta-eyebrow">Travaillons ensemble</p>
+        <h2 class="cta-titre">Un projet à<br><em>construire ensemble ?</em></h2>
+        <div class="cta-boutons">
+            <a href="contact.html" class="bouton-principal">Me contacter</a>
+            <a href="projets.html" class="bouton-discret">Voir mes projets</a>
+        </div>
+    </section>
+
+    <!-- ─── PIED DE PAGE ───────────────────────────────────────────── -->
+    <footer>
+        <span class="pied-nom">Iléona Vial — Montréal</span>
+        <div class="pied-liens">
+            <a href="mailto:ileona2525@gmail.com">ileona2525@gmail.com</a>
+            <a href="https://www.linkedin.com/in/ileona-vial-24ba8631b" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="src/images/apropos/I_Vial_CV_Prelim.pdf" target="_blank">CV</a>
         </div>
     </footer>
+
 
     <script type="module" src="/src/main.js"></script>
 

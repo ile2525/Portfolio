@@ -291,3 +291,146 @@
         height: 50vh;
       }
     }
+
+    /* ─── RESPONSIVE À propos ──────────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      :root {
+        --marge-page: 48px;
+      }
+
+      .section-identite {
+        grid-template-columns: 260px 1fr;
+        gap: 56px;
+      }
+
+      .fonctionnement-grille {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      :root {
+        --marge-page: 24px;
+      }
+
+      .ligne-atmo {
+        display: none;
+      }
+
+      nav,
+      nav.défilée {
+        padding: 18px 24px;
+      }
+
+      .entete-page {
+        flex-direction: column;
+        gap: 0;
+        padding-top: 110px;
+      }
+
+      .section-identite {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-top: 52px;
+      }
+
+      .identite-photo-cadre img {
+        aspect-ratio: 4 / 3;
+      }
+
+      .formations-timeline::before {
+        left: 90px;
+      }
+
+      .formation-item {
+        grid-template-columns: 90px 1fr;
+        gap: 28px;
+      }
+
+      .formation-item::after {
+        left: calc(90px - 3px);
+      }
+
+      .formation-periode {
+        padding-right: 20px;
+        font-size: 11px;
+      }
+
+      .logiciel-item {
+        width: 60px;
+        height: 60px;
+        padding: 12px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+
+      .pied-liens {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .nav-liens {
+        display: none;
+      }
+
+      .section-cta {
+        padding: 64px var(--marge-page);
+      }
+
+      .cta-boutons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+
+    /* ─── RESPONSIVE Contact ──────────────────────────────────────────────── */
+    @media (max-width: 860px) {
+      :root {
+        --marge-page: 28px;
+      }
+
+      .ligne-atmo {
+        display: none;
+      }
+
+      nav,
+      nav.défilée {
+        padding: 18px 28px;
+      }
+
+      .contact-hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .contact-gauche {
+        padding: 120px var(--marge-page) 64px;
+        border-right: none;
+        border-bottom: 0.5px solid var(--bordure);
+      }
+
+      .contact-droite {
+        padding: 64px var(--marge-page) 80px;
+        gap: 48px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+
+      .pied-liens {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+    }

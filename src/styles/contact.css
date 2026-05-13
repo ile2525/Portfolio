@@ -1,50 +1,235 @@
-.contact-wrapper {
-  width: 100%;
-  background-color: #200808;
+/* ─── SECTION HÉRO CONTACT ────────────────────────────────────── */
+    .contact-hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 0.5px solid var(--bordure);
+    }
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 1.5rem;
-}
+    /* Colonne gauche — accroche */
+    .contact-gauche {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 140px var(--marge-page) 80px;
+      border-right: 0.5px solid var(--bordure);
+      position: relative;
+    }
 
-.contact-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-  width: 50%;
-  padding: 10rem 10rem 7rem 10rem;
-}
+    .contact-surtitre {
+      display: flex; align-items: center; gap: 14px;
+      font-size: 10px; font-weight: 300;
+      letter-spacing: .24em; text-transform: uppercase;
+      color: var(--accent-clair);
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: glisserVers .8s var(--courbe-sortie) .15s forwards;
+    }
+    .contact-surtitre::before {
+      content: '';
+      display: block; width: 28px; height: 0.5px;
+      background: var(--accent); flex-shrink: 0;
+    }
 
-.logos-contact {
-  display: flex;
-  flex-direction: row;
-  gap: 3rem;
-}
-.log-contact {
-  width: 5rem;
-  height: 5rem;
-}
+    .contact-titre {
+      font-family: var(--police-serif);
+      font-weight: 300;
+      font-size: clamp(40px, 4.5vw, 64px);
+      line-height: 1.05;
+      letter-spacing: -.01em;
+      color: var(--creme);
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: glisserVers 1s var(--courbe-sortie) .3s forwards;
+    }
+    .contact-titre em {
+      font-style: italic;
+      color: var(--accent-clair);
+    }
 
-.separateur-contact {
-    width: 70%;
-    height: 0.2vh;
-    background-color: #F2CFC4;
-}
+    .contact-description {
+      font-size: 14px; font-weight: 300;
+      line-height: 1.9; letter-spacing: .02em;
+      color: var(--creme-attenué);
+      max-width: 400px;
+      margin-bottom: 52px;
+      opacity: 0;
+      animation: glisserVers .9s var(--courbe-sortie) .45s forwards;
+    }
 
-.contact-accroche {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-}
+    /* Canaux de contact directs */
+    .canaux-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      opacity: 0;
+      animation: glisserVers .9s var(--courbe-sortie) .6s forwards;
+    }
 
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
+    .canal-lien {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      border-top: 0.5px solid var(--bordure);
+      transition: border-color .25s;
+      gap: 16px;
+    }
+    .canal-lien:last-child { border-bottom: 0.5px solid var(--bordure); }
+    .canal-lien:hover { border-color: var(--accent); }
+
+    .canal-gauche { display: flex; align-items: center; gap: 20px; }
+    .canal-etiquette {
+      font-size: 9px; font-weight: 300;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--accent-clair);
+      min-width: 72px;
+    }
+    .canal-valeur {
+      font-family: var(--police-serif);
+      font-size: 18px; font-weight: 300;
+      color: var(--creme);
+      letter-spacing: .02em;
+      transition: color .2s;
+    }
+    .canal-lien:hover .canal-valeur { color: var(--accent-clair); }
+
+    .canal-fleche {
+      font-size: 16px;
+      color: var(--creme-fantome);
+      transition: transform .3s var(--courbe-sortie), color .2s;
+      flex-shrink: 0;
+    }
+    .canal-lien:hover .canal-fleche {
+      transform: translate(4px, -4px);
+      color: var(--accent-clair);
+    }
+
+    /* ─── Colonne droite — infos + CV ─────────────────────────────── */
+    .contact-droite {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 140px var(--marge-page) 80px;
+      gap: 64px;
+    }
+
+    /* Bloc disponibilité */
+    .bloc-disponibilite {
+      opacity: 0;
+      animation: glisserVers .9s var(--courbe-sortie) .5s forwards;
+    }
+    .disponibilite-indicateur {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 20px;
+    }
+    .point-vert {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #6DBE8C;
+      box-shadow: 0 0 0 3px rgba(109, 190, 140, 0.2);
+      animation: pulsation 2.5s ease-in-out infinite;
+    }
+    @keyframes pulsation {
+      0%, 100% { box-shadow: 0 0 0 3px rgba(109, 190, 140, 0.2); }
+      50%       { box-shadow: 0 0 0 6px rgba(109, 190, 140, 0.08); }
+    }
+    .disponibilite-texte {
+      font-size: 10px; font-weight: 300;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: #6DBE8C;
+    }
+    .disponibilite-titre {
+      font-family: var(--police-serif);
+      font-weight: 300; font-size: clamp(22px, 2.5vw, 32px);
+      color: var(--creme); line-height: 1.2;
+      margin-bottom: 14px; letter-spacing: -.01em;
+    }
+    .disponibilite-titre em { font-style: italic; color: var(--accent-clair); }
+    .disponibilite-desc {
+      font-size: 13px; font-weight: 300;
+      line-height: 1.85; letter-spacing: .02em;
+      color: var(--creme-attenué);
+    }
+
+    /* Bloc CV */
+    .bloc-cv {
+      border: 0.5px solid var(--bordure);
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      animation: glisserVers .9s var(--courbe-sortie) .65s forwards;
+      transition: border-color .3s;
+    }
+    .bloc-cv:hover { border-color: var(--accent); }
+    /* Dégradé décoratif coin */
+    .bloc-cv::before {
+      content: '';
+      position: absolute; top: 0; right: 0;
+      width: 120px; height: 120px;
+      background: radial-gradient(circle at top right,
+        var(--accent-lueur), transparent 70%);
+      pointer-events: none;
+    }
+
+    .cv-surtitre {
+      font-size: 9px; font-weight: 300;
+      letter-spacing: .22em; text-transform: uppercase;
+      color: var(--accent-clair);
+      margin-bottom: 12px;
+    }
+    .cv-titre {
+      font-family: var(--police-serif);
+      font-weight: 300; font-size: clamp(20px, 2vw, 28px);
+      color: var(--creme); line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .cv-desc {
+      font-size: 13px; font-weight: 300;
+      line-height: 1.8; letter-spacing: .02em;
+      color: var(--creme-attenué);
+      margin-bottom: 28px;
+    }
+    .bouton-cv {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-size: 10px; font-weight: 300;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--creme);
+      background: var(--accent);
+      padding: 12px 26px;
+      border: none; cursor: none;
+      transition: background .3s;
+    }
+    .bouton-cv::after { content: '↓'; }
+    .bouton-cv:hover { background: var(--accent-clair); }
+
+    /* Bloc infos supplémentaires */
+    .bloc-infos {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      opacity: 0;
+      animation: glisserVers .9s var(--courbe-sortie) .8s forwards;
+    }
+    .info-ligne {
+      display: flex; align-items: baseline;
+      justify-content: space-between;
+      padding: 14px 0;
+      border-bottom: 0.5px solid var(--bordure);
+      gap: 16px;
+    }
+    .info-ligne:first-child { border-top: 0.5px solid var(--bordure); }
+    .info-cle {
+      font-size: 9px; font-weight: 300;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--creme-fantome);
+      flex-shrink: 0;
+    }
+    .info-val {
+      font-family: var(--police-serif);
+      font-size: 15px; font-weight: 300;
+      color: var(--creme-attenué);
+      letter-spacing: .02em;
+      text-align: right;
+    }

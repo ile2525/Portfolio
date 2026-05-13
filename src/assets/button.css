@@ -46,3 +46,10 @@
     .bouton-discret:hover::after {
         transform: translateX(6px);
     }
+
+    .cta-boutons {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
