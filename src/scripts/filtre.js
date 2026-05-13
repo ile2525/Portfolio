@@ -1,30 +1,53 @@
 export function filtreCategory() {
-    if (!document.querySelector(".filtres")) return;
+  /* ── FILTRAGE DES PROJETS ──────────────────────────────────── */
+  const boutonsFiltre = document.querySelectorAll('.filtre-bouton');
+  const toutesLesCartes = document.querySelectorAll('.carte-projet');
+  const messageVide = document.getElementById('message-vide');
+  const enteteCompteur = document.querySelector('.entete-compteur');
 
-    // appel des boites et filtres
-    const filtreButtons = document.querySelectorAll(".filtres button");
-    const boites = document.querySelectorAll(".boite-projet");
+  boutonsFiltre.forEach(bouton => {
+    bouton.addEventListener('click', () => {
 
-    filtreButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            //Gère état actif/inactif
-            filtreButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
+      /* Mettre à jour le bouton actif */
+      boutonsFiltre.forEach(b => b.classList.remove('actif'));
+      bouton.classList.add('actif');
 
-            //Récupère catégories et boites associées
-            const selectionCategory = button.getAttribute('data-category').trim().toLowerCase();
+      const categorieChoisie = bouton.dataset.categorie;
+      let nombreVisible = 0;
 
-            //Gère état visible/invisible
-            boites.forEach(boite => {
-                const boiteCategory = boite.getAttribute('data-category') || '';
-                const categories = boiteCategory.split(',').map(c => c.trim().toLowerCase()).filter(Boolean);
+      toutesLesCartes.forEach((carte, index) => {
+        const categorieCarte = carte.dataset.categorie;
+        const estVisible =
+          categorieChoisie === 'tous' || categorieCarte === categorieChoisie;
 
-                if (selectionCategory === 'all' || categories.includes(selectionCategory)) {
-                    boite.classList.remove('hidden'); //visible
-                } else {
-                    boite.classList.add('hidden');    //invisible
-                }
-            });
-        });
+        if (estVisible) {
+          /* Retirer la grande carte lors du filtre (sauf "tous") */
+          if (categorieChoisie !== 'tous') {
+            carte.classList.remove('grande');
+          } else if (index === 0) {
+            carte.classList.add('grande');
+          }
+
+          carte.classList.remove('masquée');
+          /* Décalage d'apparition progressif */
+          setTimeout(() => {
+            carte.style.transitionDelay = (nombreVisible * 0.07) + 's';
+            carte.classList.add('visible');
+          }, 20);
+          nombreVisible++;
+        } else {
+          carte.style.transitionDelay = '0s';
+          carte.classList.add('masquée');
+          carte.classList.remove('visible');
+        }
+      });
+
+      /* Mettre à jour le compteur */
+      enteteCompteur.textContent =
+        String(nombreVisible).padStart(2, '0');
+
+      /* Afficher le message vide si besoin */
+      messageVide.classList.toggle('visible', nombreVisible === 0);
     });
+  });
 }

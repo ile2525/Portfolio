@@ -1,77 +1,157 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Page acceuil</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page projets</title>
 </head>
 
-<body>
-  <!-- ----------------Barre de navigation---------------- -->
-  <header>
-    <div class="header-wrapper">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400&display=swap"
+  rel="stylesheet" />
 
-      <div class="header-container">
-        <a href="index.html"><img class="header-icone" src="src/images/icones/accueil.png" alt="accueil"></a>
-        <h1>Portfolio</h1>
-        <a href="contact.html"><img class="header-icone" src="src/images/icones/contact.png" alt="contact"></a>
+
+<body>
+  <!-- Curseur personnalisé -->
+  <div id="curseur-point"></div>
+  <div id="curseur-anneau"></div>
+
+  <!-- Lignes décoratives verticales -->
+  <div class="ligne-atmo ligne-atmo-gauche"></div>
+  <div class="ligne-atmo ligne-atmo-droite"></div>
+
+  <!-- ─── NAVIGATION ─────────────────────────────────────────────── -->
+  <nav id="barre-navigation">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-nom">Iléona Vial</span>
+      <span class="nav-logo-titre">Technologue créative · Médias interactifs</span>
+    </a>
+    <div class="nav-liens">
+      <a href="projets.html" class="actif">Projets</a>
+      <a href="apropos.html">À propos</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-bouton-contact">Collaborons</a>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ───────────────────────────────────────────────────── -->
+  <section class="hero">
+
+    <div class="hero-gauche">
+      <p class="hero-surtitre">Médias interactifs &amp; installation</p>
+
+      <h1 class="hero-titre">
+        Expériences<br>
+        <em>interactives<br>et sensibles.</em>
+      </h1>
+
+      <p class="hero-description">
+       J’explore la rencontre entre technologie, design et émotion à travers des projets immersifs, interactifs et narratifs.
+      </p>
+
+      <div class="hero-boutons">
+        <a href="projets.html" class="bouton-principal">Voir mes projets</a>
+        <a href="apropos.html" class="bouton-discret">À propos</a>
       </div>
     </div>
 
-  </header>
-
-  <div class="header-separateur"></div>
-
-  <!-- ----------------Contenu de la page---------------- -->
-  <main class="main-wrapper">
-    <div class="main-container">
-      <canvas id="dessin-sym"></canvas>
-      <div class="conteneur-canvas">
-        <img class="main-img" src="src/images/apropos/portrait.png" alt="portrait">
-        <div class="main-buttons">
-          <button>
-            <a href="projets.html">
-              <h2>Voir mes projets</h2>
-            </a>
-          </button>
-          <button>
-            <a href="apropos.html">
-              <h2>À propos</h2>
-            </a>
-          </button>
+    <div class="hero-droite">
+      <div class="hero-image-enveloppe">
+        <img src="src/images/apropos/PortraitDessin.png" alt="Iléona Vial — projet interactif" />
+        <div class="hero-image-placeholder">
+          <!-- <span class="placeholder-monogramme">IV</span>
+          <span class="placeholder-texte"></span> -->
         </div>
       </div>
+
+      <div class="hero-compteur">
+        <span class="compteur-actuel">01</span>
+        <div class="compteur-separateur"></div>
+        <span class="compteur-total">05</span>
+      </div>
+
+      <div class="hero-indicateur-scroll">
+        <div class="scroll-piste"></div>
+      </div>
     </div>
-  </main>
 
-  <!-- ----------------Bas de page---------------- -->
-  <div class="footer-separateur"></div>
+  </section>
 
-  <footer class="footer-wrapper">
-    <div class="footer-container">
-      <div class="information">
-        <h1>Iléona Vial</h1>
-        <p>Technologue créative en médias interactifs</p>
-        <p>Montréal, QC, Canada</p>
-        <p>+1 (263)788-6251</p>
-        <p>ileona2525@gmail.com</p>
+  <!-- ─── PROJETS EN VEDETTE ─────────────────────────────────────── -->
+  <section class="projets-vedette">
+
+    <div class="vedette-entete" id="entete-vedette">
+      <div>
+        <p class="vedette-surtitre">Travaux sélectionnés</p>
+        <h2 class="vedette-titre">Projets récents</h2>
       </div>
+      <a href="projets.html" class="vedette-lien-tous">Tous les projets</a>
+    </div>
 
-      <div class="pages">
-        <a href="projets.html">Mes projets</a>
-        <a href="apropos.html">À propos</a>
-        <a href="contact.html">Contact</a>
-      </div>
+    <div class="grille-cartes">
+      <article class="carte-projet" style="transition-delay:.05s">
+        <div class="carte-vignette-home">
+          <img src="src/images/projets/FeT/photo_panel1.jpg" alt="Femmes+ en Tech" />
+          <!-- <div class="carte-vignette-placeholder">Visuel projet</div> -->
+          <div class="carte-superposition-home">
+            <span class="superposition-lien-home">Voir le projet</span>
+          </div>
+        </div>
+        <div class="carte-corps-home">
+          <p class="carte-categorie-home">Art interactif</p>
+          <h3 class="carte-titre-home">Femmes+ en Tech</h3>
+          <p class="carte-annee-home">2025</p>
+        </div>
+      </article>
 
-      <div class="logos">
-        <a href="mailto:ileona2525@gmail.com" target="_blank"><img  class="logo-box" src="src/images/icones/gmail.png" alt="gmail"></a>
-        <a href="https://www.linkedin.com/in/ileona-vial-24ba8631b" target="_blank"><img  class="logo-box" src="src/images/icones/linkedin.png" alt="linkedin"></a>
-      </div>
+      <article class="carte-projet" style="transition-delay:.15s">
+        <div class="carte-vignette-home" style="background:var(--fond-carte-2)">
+          <img src="src/images/projets/immigration/boite-cover.png" alt="Les défis de l'immigration" />
+          <!-- <div class="carte-vignette-placeholder">Visuel projet</div> -->
+          <div class="carte-superposition-home">
+            <span class="superposition-lien-home">Voir le projet</span>
+          </div>
+        </div>
+        <div class="carte-corps-home">
+          <p class="carte-categorie-home">Installation</p>
+          <h3 class="carte-titre-home">Les défis de l'immigration</h3>
+          <p class="carte-annee-home">2024</p>
+        </div>
+      </article>
+
+      <article class="carte-projet" style="transition-delay:.25s">
+        <div class="carte-vignette-home" style="background:var(--fond-carte-3)">
+          <img src="src/images/projets/emotions/emotion-cover.jpg" alt="Émotions interactives" />
+          <!-- <div class="carte-vignette-placeholder">Visuel projet</div> -->
+          <div class="carte-superposition-home">
+            <span class="superposition-lien-home">Voir le projet</span>
+          </div>
+        </div>
+        <div class="carte-corps-home">
+          <p class="carte-categorie-home">Interactif &amp; son</p>
+          <h3 class="carte-titre-home">Émotions interactives</h3>
+          <p class="carte-annee-home">2025</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ─── PIED DE PAGE ───────────────────────────────────────────── -->
+  <footer>
+    <span class="pied-nom">Iléona Vial — Montréal</span>
+    <div class="pied-liens">
+      <a href="mailto:ileona2525@gmail.com">ileona2525@gmail.com</a>
+      <a href="https://www.linkedin.com/in/ileona-vial-24ba8631b" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="src/images/apropos/I_Vial_CV_Prelim.pdf" target="_blank">CV</a>
     </div>
   </footer>
+
   <script type="module" src="/src/main.js"></script>
+
 </body>
 
 </html>

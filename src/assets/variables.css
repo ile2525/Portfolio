@@ -1,0 +1,35 @@
+    /* ─── VARIABLES — Palette de couleurs ─────────────────────── */
+    :root {
+      /* Couleurs de fond */
+      --fond-principal: #090909;
+      --fond-surface: #100806;
+      --fond-carte: #1A0E0C;
+      --fond-carte-2: #160C0A;
+      --fond-carte-3: #18100E;
+
+      /* Couleur d'accent (brun-rouge) */
+      --accent: #7A4A3A;
+      --accent-clair: #A87060;
+      --accent-lueur: rgba(122, 74, 58, 0.18);
+
+      /* Couleur de texte (crème rosé) */
+      --creme: #E8D0C4;
+      --creme-attenué: rgba(232, 208, 196, 0.42);
+      --creme-fantome: rgba(232, 208, 196, 0.15);
+      --creme-leger: rgba(232, 208, 196, 0.07);
+
+      /* Bordures */
+      --bordure: rgba(232, 208, 196, 0.08);
+      --bordure-moyenne: rgba(232, 208, 196, 0.14);
+
+      /* Typographie */
+      --police-serif: 'Cormorant', Georgia, serif;
+      --police-sans: 'DM Sans', sans-serif;
+
+      /* Animation */
+      --courbe-sortie: cubic-bezier(0.16, 1, 0.3, 1);
+
+      /* Mise en page */
+      --largeur-max: 1280px;
+      --marge-page: 80px;
+    }

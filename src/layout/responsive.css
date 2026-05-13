@@ -1,0 +1,293 @@
+    /* ─── RESPONSIVE ACCUEIL ──────────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+
+      nav,
+      nav.défilée {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+
+      .ligne-atmo-gauche {
+        left: 40px;
+      }
+
+      .ligne-atmo-droite {
+        right: 40px;
+      }
+
+      .hero-gauche {
+        padding: 140px 52px 80px 56px;
+      }
+
+      .projets-vedette {
+        padding: 72px 56px 90px;
+      }
+
+      footer {
+        padding: 32px 56px;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .ligne-atmo {
+        display: none;
+      }
+
+      nav,
+      nav.défilée {
+        padding: 18px 28px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-gauche {
+        padding: 110px 28px 56px;
+        order: 2;
+      }
+
+      .hero-gauche::after {
+        display: none;
+      }
+
+      .hero-droite {
+        order: 1;
+        min-height: 58vw;
+      }
+
+      .hero-indicateur-scroll {
+        display: none;
+      }
+
+      .projets-vedette {
+        padding: 56px 28px 72px;
+      }
+
+      .vedette-entete {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .grille-cartes {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .carte-superposition {
+        opacity: 1;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 20px;
+        padding: 28px;
+        text-align: center;
+      }
+
+      .pied-liens {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .nav-liens {
+        display: none;
+      }
+
+      .hero-gauche {
+        padding: 96px 20px 48px;
+      }
+
+      .hero-titre {
+        font-size: 44px;
+      }
+
+      .projets-vedette {
+        padding: 48px 20px 60px;
+      }
+
+      footer {
+        padding: 24px 20px;
+      }
+    }
+
+    /* ─── Page projet ──────────────────────────────────────────────── */
+    @media (max-width: 1100px) {
+      :root {
+        --marge-page: 48px;
+      }
+
+      .grille-projets {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .carte-projet.grande {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 760px) {
+      :root {
+        --marge-page: 24px;
+      }
+
+      .ligne-atmo {
+        display: none;
+      }
+
+      nav,
+      nav.défilée {
+        padding: 18px 24px;
+      }
+
+      .entete-page {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding-top: 110px;
+      }
+
+      .entete-compteur {
+        font-size: 48px;
+      }
+
+      .barre-filtres {
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .grille-projets {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .carte-projet.grande {
+        grid-column: span 1;
+      }
+
+      .carte-projet.grande .carte-vignette {
+        height: 240px;
+      }
+
+      .carte-superposition {
+        opacity: 1;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 20px;
+        padding: 28px 24px;
+        text-align: center;
+      }
+
+      .pied-liens {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-liens {
+        display: none;
+      }
+
+      .entete-titre {
+        font-size: 38px;
+      }
+    }
+
+    /* ─── Projet individuel──────────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      :root {
+        --marge-page: 48px;
+      }
+
+      .disposition-deux-col,
+      .disposition-deux-col.inversée {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .col-icone {
+        display: none;
+      }
+
+      .bande-intro {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .apprentissages-grille {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      :root {
+        --marge-page: 24px;
+      }
+
+      .ligne-atmo {
+        display: none;
+      }
+
+      nav,
+      nav.défilée {
+        padding: 18px 24px;
+      }
+
+      .projet-hero {
+        height: 60vh;
+      }
+
+      .hero-titre-flottant {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .hero-meta-rapide {
+        justify-content: flex-start;
+      }
+
+      .navigation-projets {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-projet-lien.suivant {
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .nav-projet-lien.suivant .nav-direction {
+        flex-direction: row;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+
+      .pied-liens {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-liens {
+        display: none;
+      }
+
+      .projet-hero {
+        height: 50vh;
+      }
+    }

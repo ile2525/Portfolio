@@ -1,0 +1,247 @@
+/* ─── CARTE DE PROJET ─────────────────────────────────────────── */
+
+/* ─── Page Accueil ─────────────────────────── */
+
+/* Grille de cartes */
+.grille-cartes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+/* Vignette image */
+.carte-vignette-home {
+    height: 210px;
+    background: var(--fond-carte);
+    position: relative;
+    overflow: hidden;
+}
+
+.carte-vignette-home img {
+    height: 100%;
+    transition: transform .7s var(--courbe-sortie);
+}
+
+
+
+.carte-vignette-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--creme-fantome);
+}
+
+/* Superposition au survol */
+.carte-superposition-home {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(9, 9, 9, .88) 0%,
+            rgba(9, 9, 9, .2) 50%,
+            transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity .35s;
+}
+
+.carte-superposition-home {
+    opacity: 1;
+}
+
+.superposition-lien-home {
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--creme);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.superposition-lien-home::after {
+    content: '→';
+    color: var(--accent-clair);
+}
+
+/* Corps de la carte */
+.carte-corps-home {
+    padding: 22px 22px 24px;
+}
+
+.carte-categorie-home {
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--accent-clair);
+    margin-bottom: 9px;
+}
+
+.carte-titre-home {
+    font-family: var(--police-serif);
+    font-weight: 300;
+    font-size: 21px;
+    line-height: 1.15;
+    color: var(--creme);
+    margin-bottom: 8px;
+    transition: color .2s;
+}
+
+.carte-annee-home {
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: .1em;
+    color: var(--creme-fantome);
+}
+
+
+
+/* ─── Page Projet ─────────────────────────── */
+.carte-projet {
+    border: 0.5px solid var(--bordure);
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(32px);
+    transition:
+        opacity .7s var(--courbe-sortie),
+        transform .7s var(--courbe-sortie),
+        border-color .3s;
+}
+
+.carte-projet.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Masquage lors du filtre */
+.carte-projet.masquée {
+    opacity: 0 !important;
+    transform: scale(0.97) !important;
+    pointer-events: none;
+    position: absolute;
+    visibility: hidden;
+}
+
+.carte-projet:hover {
+    border-color: var(--bordure-moyenne);
+}
+
+/* Vignette image */
+.carte-vignette {
+    height: 240px;
+    background: var(--fond-carte);
+    position: relative;
+    overflow: hidden;
+}
+
+.carte-vignette img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .8s var(--courbe-sortie);
+}
+
+.carte-projet:hover .carte-vignette img {
+    transform: scale(1.05);
+}
+
+/* Superposition au survol */
+.carte-superposition {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(9, 9, 9, .9) 0%,
+            rgba(9, 9, 9, .25) 45%,
+            transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 22px;
+    opacity: 0;
+    transition: opacity .4s;
+}
+
+.carte-projet:hover .carte-superposition {
+    opacity: 1;
+}
+
+.superposition-lien {
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--creme);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: gap .3s var(--courbe-sortie);
+}
+
+.superposition-lien::after {
+    content: '→';
+    color: var(--accent-clair);
+}
+
+.carte-projet:hover .superposition-lien {
+    gap: 14px;
+}
+
+/* Corps de la carte */
+.carte-corps {
+    padding: 22px 24px 26px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+
+
+.carte-categorie {
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--accent-clair);
+    margin-bottom: 8px;
+}
+
+.carte-titre {
+    font-family: var(--police-serif);
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 1.15;
+    color: var(--creme);
+    transition: color .25s;
+}
+
+.carte-projet:hover .carte-titre {
+    color: var(--accent-clair);
+}
+
+.carte-annee {
+    font-family: var(--police-serif);
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: .06em;
+    color: var(--creme-fantome);
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+/* ─── CARTE GRANDE (première) ─────────────────────────────────── */
+.carte-projet.grande {
+    grid-column: span 2;
+}
+
+.carte-projet.grande .carte-vignette {
+    height: 340px;
+}

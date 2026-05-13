@@ -1,41 +1,250 @@
-.main-wrapper {
-    width: 100%;
-    height: 90vh;
-    background-color: black;
+    /* ─── SECTION HERO ────────────────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+    }
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    /* Colonne gauche */
+    .hero-gauche {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 140px 72px 90px 80px;
+    }
 
-.main-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 2rem;
-}
+    .hero-gauche::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 12%;
+      bottom: 12%;
+      width: 0.5px;
+      background: linear-gradient(to bottom,
+          transparent,
+          var(--bordure-moyenne) 30%,
+          var(--bordure-moyenne) 70%,
+          transparent);
+    }
 
+    .hero-surtitre {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 10px;
+      font-weight: 300;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--accent-clair);
+      margin-bottom: 30px;
+      opacity: 0;
+      animation: glisserVers .9s var(--courbe-sortie) .15s forwards;
+    }
 
-.conteneur-canvas{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    gap: 2rem;
-    align-items: center;
-}
+    .hero-surtitre::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 0.5px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
 
-.main-wrapper .main-img {
-    width: 70%;
-    height: 70%;
-    height: auto;
-    border: none;
-    touch-action: none;
-}
+    .hero-titre {
+      font-family: var(--police-serif);
+      font-weight: 300;
+      font-size: clamp(50px, 5.8vw, 80px);
+      line-height: 1.0;
+      letter-spacing: -.01em;
+      color: var(--creme);
+      margin-bottom: 30px;
+      opacity: 0;
+      animation: glisserVers 1s var(--courbe-sortie) .35s forwards;
+    }
 
-#dessin-sym {
-    width: 99vw;
-    height: 100vh;
-    background:#6f1d1d9c; 
-    touch-action: none;
-}
+    .hero-titre em {
+      font-style: italic;
+      color: var(--accent-clair);
+    }
+
+    .hero-description {
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.9;
+      letter-spacing: .03em;
+      color: var(--creme-attenué);
+      max-width: 360px;
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: glisserVers .9s var(--courbe-sortie) .55s forwards;
+    }
+
+    /* Colonne droite */
+    .hero-droite {
+      position: relative;
+      background: var(--fond-carte);
+      overflow: hidden;
+    }
+
+    .hero-image-enveloppe {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      animation: apparaitre 1.4s var(--courbe-sortie) .2s forwards;
+    }
+
+    .hero-image-enveloppe img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    /* Vignette sur l'image */
+    .hero-image-enveloppe::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to right, rgba(9, 9, 9, .5) 0%, transparent 40%),
+        linear-gradient(to top, rgba(9, 9, 9, .4) 0%, transparent 50%);
+    }
+
+    .hero-image-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .placeholder-monogramme {
+      font-family: var(--police-serif);
+      font-weight: 300;
+      font-size: 56px;
+      color: var(--accent);
+      letter-spacing: .1em;
+      opacity: .35;
+      line-height: 1;
+    }
+
+    .placeholder-texte {
+      font-size: 9px;
+      font-weight: 300;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--creme-fantome);
+    }
+
+    .hero-compteur {
+      position: absolute;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 7px;
+      z-index: 2;
+      opacity: 0;
+      animation: apparaitre .8s var(--courbe-sortie) 1s forwards;
+    }
+
+    .compteur-actuel {
+      font-family: var(--police-serif);
+      font-weight: 300;
+      font-size: 13px;
+      letter-spacing: .08em;
+      color: var(--accent-clair);
+    }
+
+    .compteur-separateur {
+      width: 20px;
+      height: 0.5px;
+      background: var(--bordure-moyenne);
+    }
+
+    .compteur-total {
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: .08em;
+      color: var(--creme-fantome);
+    }
+
+    /* ─── SECTION PROJETS EN VEDETTE ──────────────────────────────── */
+    .projets-vedette {
+      background: var(--fond-surface);
+      border-top: 0.5px solid var(--bordure);
+      padding: 90px 80px 110px;
+    }
+
+    .vedette-entete {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 56px;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .8s var(--courbe-sortie), transform .8s var(--courbe-sortie);
+    }
+
+    .vedette-entete.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .vedette-surtitre {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 9px;
+      font-weight: 300;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--accent-clair);
+      margin-bottom: 12px;
+    }
+
+    .vedette-surtitre::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 0.5px;
+      background: var(--accent);
+    }
+
+    .vedette-titre {
+      font-family: var(--police-serif);
+      font-weight: 300;
+      font-size: clamp(30px, 3vw, 44px);
+      letter-spacing: .04em;
+      color: var(--creme);
+      line-height: 1.05;
+    }
+
+    .vedette-lien-tous {
+      font-size: 10px;
+      font-weight: 300;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--creme-attenué);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 5px;
+      border-bottom: 0.5px solid var(--bordure);
+      transition: color .2s, border-color .2s;
+    }
+
+    .vedette-lien-tous::after {
+      content: '→';
+    }
+
+    .vedette-lien-tous:hover {
+      color: var(--creme);
+      border-color: var(--accent-clair);
+    }
+

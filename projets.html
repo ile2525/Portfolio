@@ -7,133 +7,199 @@
     <title>Page projets</title>
 </head>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400&display=swap" rel="stylesheet" />
+
+
 <body>
-    <!-- ----------------Barre de navigation---------------- -->
-    <header>
-        <div class="header-wrapper">
 
-            <div class="header-container">
-                <a href="index.html"><img class="header-icone" src="src/images/icones/accueil.png" alt="accueil"></a>
-                <h1>Mes projets</h1>
-                <a href="contact.html"><img class="header-icone" src="src/images/icones/contact.png" alt="contact"></a>
+    <body>
+
+        <!-- Curseur personnalisé -->
+        <div id="curseur-point"></div>
+        <div id="curseur-anneau"></div>
+
+        <!-- Lignes décoratives verticales -->
+        <div class="ligne-atmo ligne-atmo-gauche"></div>
+        <div class="ligne-atmo ligne-atmo-droite"></div>
+
+        <!-- ─── NAVIGATION ─────────────────────────────────────────────── -->
+        <nav id="barre-navigation">
+            <a href="index.html" class="nav-logo">
+                <span class="nav-logo-nom">Iléona Vial</span>
+                <span class="nav-logo-titre">Technologue créative · Médias interactifs</span>
+            </a>
+            <div class="nav-liens">
+                <a href="projets.html" class="actif">Projets</a>
+                <a href="apropos.html">À propos</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="nav-bouton-contact">Collaborons</a>
             </div>
-        </div>
-    </header>
+        </nav>
 
-    <div class="header-separateur"></div>
-
-    <!-- ----------------Contenu de la page---------------- -->
-    <main class="main-wrapper-project">
-
-        <!-- Boutons permettant de filtrer les projet par catégories -->
-        <div class="filtres">
-            <div class="main-buttons-filtre">
-                <button data-category="all">
-                    <h2>Tous</h2>
-                </button>
-                <button data-category="art-interactif">
-                    <h2>Art interactif</h2>
-                </button>
-                <button data-category="design">
-                    <h2>Design</h2>
-                </button>
-                <button data-category="Son">
-                    <h2>Son</h2>
-                </button>
+        <!-- ─── EN-TÊTE DE PAGE ───────────────────────────────────────── -->
+        <header class="entete-page">
+            <div class="entete-gauche">
+                <p class="entete-surtitre">Portfolio</p>
+                <h1 class="entete-titre">
+                    Mes<br><em>projets.</em>
+                </h1>
             </div>
-        </div>
+            <span class="entete-compteur" aria-hidden="true">06</span>
+        </header>
 
-        <!-- Boites de prévisualisation des projets -->
-        <div class="main-container-project">
-
-            <!-- Projet Femmes+ en tech -->
-            <div class="boite-projet">
-                <a href="FeT.html"><img class="boite-img-projet"
-                        src="src/images/projets/FeT/photo_panel1.jpg" alt="Femmes+ en tech">
-
-                    <div class="base-info-projet">
-                        <h2>Femmes+ en Tech</h2>
-                        <h2>2025</h2>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Projet 1 : Les défis de l'immigration -->
-            <div class="boite-projet" data-category="Son">
-                <a href="immigration.html"><img class="boite-img-projet"
-                        src="src/images/projets/immigration/boite-cover.png" alt="immigration">
-
-                    <div class="base-info-projet">
-                        <h2>Les défis de l'immigration</h2>
-                        <h2>2024</h2>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Projet 2 : Émotions interactives -->
-            <div class="boite-projet" data-category="art-interactif">
-                <a href="emotions.html"><img class="boite-img-projet"
-                        src="src/images/projets/emotions/emotion-cover.jpg" alt="emotions">
-                    <div class="base-info-projet">
-                        <h2>Émotions interactives</h2>
-                        <h2>2025</h2>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Projet 3 : Rose des émotions -->
-            <div class="boite-projet" data-category="design">
-                <a href="affiche.html"><img class="boite-img-projet"
-                        src="src/images/projets/archipel/Affiche_Archipel_cover.jpg" alt="frigo">
-                    <div class="base-info-projet">
-                        <h2>Rose des émotions</h2>
-                        <h2>2025</h2>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Projet 4 : Frigo interactif -->
-            <div class="boite-projet" data-category="art-interactif">
-                <a href="frigo.html"><img class="boite-img-projet" src="src/images/projets/frigo/photo_frigo3.jpg">
-                    <div class="base-info-projet">
-                        <h2>Frigo interactif</h2>
-                        <h2>2025</h2>
-                    </div>
-                </a>
-            </div>
+        <!-- ─── FILTRES ───────────────────────────────────────────────── -->
+        <div class="barre-filtres" role="group" aria-label="Filtrer les projets par catégorie">
+            <button class="filtre-bouton actif" data-categorie="tous">Tous</button>
+            <div class="filtre-separateur"></div>
+            <button class="filtre-bouton" data-categorie="art-interactif">Art interactif</button>
+            <button class="filtre-bouton" data-categorie="design">Design</button>
+            <button class="filtre-bouton" data-categorie="son">Son</button>
         </div>
 
-    </main>
+        <!-- ─── GRILLE DE PROJETS ─────────────────────────────────────── -->
+        <main class="section-projets">
+            <div class="grille-projets" id="grille-projets">
 
-    <!-- ----------------Bas de page---------------- -->
-    <div class="footer-separateur"></div>
+                <!-- Femmes+ en Tech — grande carte -->
+                <article class="carte-projet grande" data-categorie="art-interactif">
+                    <a href="FeT.html">
+                        <div class="carte-vignette">
+                            <img src="src/images/projets/FeT/photo_panel1.jpg" alt="Femmes+ en Tech" />
+                            <div class="carte-superposition">
+                                <span class="superposition-lien">Voir le projet</span>
+                            </div>
+                        </div>
+                        <div class="carte-corps">
+                            <div class="carte-info">
+                                <p class="carte-categorie">Art interactif</p>
+                                <h2 class="carte-titre">Femmes+ en Tech</h2>
+                            </div>
+                            <span class="carte-annee">2025</span>
+                        </div>
+                    </a>
+                </article>
 
-    <footer class="footer-wrapper">
-        <div class="footer-container">
-            <div class="information">
-                <h1>Iléona Vial</h1>
-                <p>Technologue créative en médias interactifs</p>
-                <p>Montréal, QC, Canada</p>
-                <p>+1 (263)788-6251</p>
-                <p>ileona2525@gmail.com</p>
+                <!-- Les défis de l'immigration -->
+                <article class="carte-projet" data-categorie="son">
+                    <a href="immigration.html">
+                        <div class="carte-vignette">
+                            <img src="src/images/projets/immigration/boite-cover.png"
+                                alt="Les défis de l'immigration" />
+                            <div class="carte-superposition">
+                                <span class="superposition-lien">Voir le projet</span>
+                            </div>
+                        </div>
+                        <div class="carte-corps">
+                            <div class="carte-info">
+                                <p class="carte-categorie">Son</p>
+                                <h2 class="carte-titre">Les défis de l'immigration</h2>
+                            </div>
+                            <span class="carte-annee">2024</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Interface d'un jeu -->
+                <article class="carte-projet" data-categorie="design">
+                    <a href="interface.html">
+                        <div class="carte-vignette">
+                            <img src="src/images/projets/interface_jeu/interface_web.png"
+                                alt="Interface d'un jeu — À l'ombre de nous" />
+                            <div class="carte-superposition">
+                                <span class="superposition-lien">Voir le projet</span>
+                            </div>
+                        </div>
+                        <div class="carte-corps">
+                            <div class="carte-info">
+                                <p class="carte-categorie">Design</p>
+                                <h2 class="carte-titre">Interface d'un jeu — À l'ombre de nous</h2>
+                            </div>
+                            <span class="carte-annee">2024</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Émotions interactives -->
+                <article class="carte-projet" data-categorie="art-interactif">
+                    <a href="emotions.html">
+                        <div class="carte-vignette">
+                            <img src="src/images/projets/emotions/emotion-cover.jpg" alt="Émotions interactives" />
+                            <div class="carte-superposition">
+                                <span class="superposition-lien">Voir le projet</span>
+                            </div>
+                        </div>
+                        <div class="carte-corps">
+                            <div class="carte-info">
+                                <p class="carte-categorie">Art interactif</p>
+                                <h2 class="carte-titre">Émotions interactives</h2>
+                            </div>
+                            <span class="carte-annee">2025</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Rose des émotions -->
+                <article class="carte-projet" data-categorie="design">
+                    <a href="affiche.html">
+                        <div class="carte-vignette">
+                            <img src="src/images/projets/archipel/Affiche_Archipel_cover.jpg" alt="Rose des émotions" />
+                            <div class="carte-superposition">
+                                <span class="superposition-lien">Voir le projet</span>
+                            </div>
+                        </div>
+                        <div class="carte-corps">
+                            <div class="carte-info">
+                                <p class="carte-categorie">Design</p>
+                                <h2 class="carte-titre">Rose des émotions</h2>
+                            </div>
+                            <span class="carte-annee">2025</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Frigo interactif -->
+                <article class="carte-projet" data-categorie="art-interactif">
+                    <a href="frigo.html">
+                        <div class="carte-vignette">
+                            <img src="src/images/projets/frigo/photo_frigo3.jpg" alt="Frigo interactif" />
+                            <div class="carte-superposition">
+                                <span class="superposition-lien">Voir le projet</span>
+                            </div>
+                        </div>
+                        <div class="carte-corps">
+                            <div class="carte-info">
+                                <p class="carte-categorie">Art interactif</p>
+                                <h2 class="carte-titre">Frigo interactif</h2>
+                            </div>
+                            <span class="carte-annee">2025</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Message si aucun résultat -->
+                <div class="message-vide" id="message-vide">
+                    <p>Aucun projet dans cette catégorie.</p>
+                </div>
+
             </div>
+        </main>
 
-            <div class="pages">
+        <!-- ─── PIED DE PAGE ───────────────────────────────────────────── -->
+        <footer>
+            <span class="pied-nom">Iléona Vial — Montréal</span>
+            <div class="pied-liens">
                 <a href="index.html">Accueil</a>
                 <a href="apropos.html">À propos</a>
+                <a href="mailto:ileona2525@gmail.com">ileona2525@gmail.com</a>
+                <a href="https://www.linkedin.com/in/ileona-vial-24ba8631b" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="src/images/apropos/I_Vial_CV_Prelim.pdf" target="_blank">CV</a>
             </div>
+        </footer>
 
-            <div class="logos">
-                <a href="mailto:ileona2525@gmail.com" target="_blank"><img class="logo-box"
-                        src="src/images/icones/gmail.png" alt="gmail"></a>
-                <a href="https://www.linkedin.com/in/ileona-vial-24ba8631b" target="_blank"><img class="logo-box"
-                        src="src/images/icones/linkedin.png" alt="linkedin"></a>
-            </div>
-        </div>
-    </footer>
+        <script type="module" src="/src/main.js"></script>
 
-    <script type="module" src="/src/main.js"></script>
-
-</body>
+    </body>
 
 </html>
