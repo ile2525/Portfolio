@@ -64,7 +64,7 @@
       gap: 48px;
     }
 
-    .bio-bloc {}
+
     .bio-surtitre {
       display: flex; align-items: center; gap: 14px;
       font-size: 9px; font-weight: 300;
@@ -186,7 +186,7 @@
       text-align: right;
       padding-right: 32px;
     }
-    .formation-corps {}
+
     .formation-diplome {
       font-family: var(--police-serif);
       font-weight: 300; font-size: 20px;

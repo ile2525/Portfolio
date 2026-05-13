@@ -1,6 +1,6 @@
     /* ─── SECTION LOGICIELS ───────────────────────────────────────── */
 
-        /* Général */
+    /* Général */
     .logiciels-titre {
         font-family: var(--police-serif);
         font-weight: 300;
@@ -8,38 +8,6 @@
         color: var(--creme);
         margin-bottom: 48px;
         letter-spacing: -.01em;
-    }
-
-    .section-logiciels {
-        padding: 80px 0;
-        border-bottom: 0.5px solid var(--bordure);
-        opacity: 0;
-        transform: translateY(24px);
-        transition: opacity .8s var(--courbe-sortie), transform .8s var(--courbe-sortie);
-    }
-
-    .section-logiciels.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-
-    /* À propos*/
-    .logiciels-groupes {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .groupe-label {
-        font-size: 9px;
-        font-weight: 300;
-        letter-spacing: .2em;
-        text-transform: uppercase;
-        color: var(--creme-fantome);
-        margin-bottom: 16px;
-        padding-bottom: 10px;
-        border-bottom: 0.5px solid var(--bordure);
     }
 
     .logiciels-rangee {
@@ -70,16 +38,41 @@
         width: 100%;
         height: 100%;
         object-fit: contain;
-        filter: brightness(0) invert(1);
-        opacity: .55;
-        transition: opacity .25s;
     }
 
-    .logiciel-item:hover img {
-        opacity: .9;
+ 
+
+    /* À propos*/
+
+    .section-logiciels {
+        padding: 80px var(--marge-page);
+        border-bottom: 0.5px solid var(--bordure);
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity .8s var(--courbe-sortie), transform .8s var(--courbe-sortie);
     }
 
+    .section-logiciels.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
+    .logiciels-groupes {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .groupe-label {
+        font-size: 9px;
+        font-weight: 300;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        color: var(--creme-fantome);
+        margin-bottom: 16px;
+        padding-bottom: 10px;
+        border-bottom: 0.5px solid var(--bordure);
+    }
 
     .logiciels-entete {
         display: flex;
@@ -103,45 +96,19 @@
 
 
     /* Projet individuels - adaptatifs*/
-    .logiciels-rangee {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        align-items: center;
+
+    .section-logiciels-projet {
+        padding: 80px 0;
+        border-bottom: 0.5px solid var(--bordure);
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity .8s var(--courbe-sortie), transform .8s var(--courbe-sortie);
     }
 
-    .logiciel-item {
-        width: 72px;
-        height: 72px;
-        border: 0.5px solid var(--bordure);
-        background: var(--fond-surface);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 14px;
-        transition: border-color .25s, background .25s, transform .25s var(--courbe-sortie);
+    .section-logiciels-projet.visible {
+        opacity: 1;
+        transform: translateY(0);
     }
-
-    .logiciel-item:hover {
-        border-color: var(--accent);
-        background: var(--accent-lueur);
-        transform: translateY(-3px);
-    }
-
-    .logiciel-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        filter: brightness(0) invert(1);
-        opacity: .55;
-        transition: opacity .25s;
-    }
-
-    .logiciel-item:hover img {
-        opacity: .9;
-    }
-
-
 
 
 
